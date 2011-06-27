@@ -188,3 +188,23 @@ get '/role/:id' do
     erb :"role/show"
   end  
 end 
+
+get '/roles' do
+  @roles = Role.all
+  erb :"role/index"
+end 
+
+get '/role/:id/delete' do
+  @role = Role.get(params[:id])
+  unless @role
+   redirect '/'
+  else
+    erb :"role/delete_confirm"
+  end  
+end
+
+delete '/role/:id' do
+  role=Role.get(params[:id])
+  role.destroy if role 
+  redirect '/roles'  
+end

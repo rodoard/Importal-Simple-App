@@ -7,9 +7,6 @@ fieldset{
 width: 216px;
 }
 
-fieldset#add-new-user select {
-margin-top:50px;
-}
 
 fieldset#add-new-user select{
 width:160px;
@@ -19,7 +16,7 @@ div.or-add-a-new-role {
 margin-top:30px;
 }
 
-table#users {
+table#users,table#roles {
  width:270px;
 }
 table#users caption {
@@ -28,6 +25,15 @@ padding-bottom:10px;
 padding-left:40px;
 } 
 
+
+table#roles caption{
+text-align:left;
+padding-bottom:10px;
+padding-left:20px;
+} 
+
+table#roles td,
+table#roles th,
 table#users th,
 table#users td {
  text-align:left;

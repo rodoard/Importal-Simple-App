@@ -1,0 +1,22 @@
+<% unless @roles.empty? %>
+<table id="roles">
+  <caption><h2>Table: Roles</h2></caption>
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @roles.each do |role| %>
+  <tr>
+    <td><%= role.name %></td>
+    <td>
+    <% ['delete'].each do |action| %>
+      <a href="role/<%= role.id %>/<%= action %>"><%= action.capitalize %></a>
+    <% end %>
+   </td>
+  </tr>
+ <% end %> 
+</table>
+<% else %>
+<h2>Roles:</h2>
+<p>No Roles!</p>
+<% end %>
