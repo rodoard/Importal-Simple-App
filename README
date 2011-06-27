@@ -1,0 +1,14 @@
+= Import Simple App
+
+Off Rails App written in Ruby using the Sinatra web framework with
+DataMapper for ORM.
+
+== Requirements
+
+Requires the following gems: bundler
+
+== More Information
+
+Example code written by Rodolphe Edouard for a code submission
+featuring a simplistic application for managing 
+user roles and passwords

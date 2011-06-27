@@ -1,0 +1,29 @@
+<% unless @roles.length > 0%>
+No roles are currently available.<br>
+Please <a href="/role/new">define a role</a> to add a new user.
+<% else %>
+<form action="/user/create" method="POST">
+<fieldset id="add-new-user">
+<legend>Add A New User</legend>
+  <div>
+  <label for="email">Email:</label>
+  <input required type="email" name="email" id="email">
+  </div>
+  <%= erb :"user/_password_form" %>  
+  <div>
+  <label for="role">Roles</label>
+  <select required name="roles[]" id="roles" multiple>
+   <% @roles.each do |role| %>
+    <option value ="<%= role.id %>"><%= role.name %></option>
+   <% end %>
+  </select>  
+  </div>
+  <input type="submit" value="Add User!"/>
+</fieldset> 
+</form>
+<% if Role.can_add_new? %>
+<div class="or-add-a-new-role">
+Or add another <a href="/role/new">role</a>.
+</div>
+<% end %>
+<% end %>

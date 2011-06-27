@@ -1,0 +1,11 @@
+<div class="user">
+<div class="email">Email: <%= @user.email %></div>
+<div class="roles">Roles: <%= @user.uroles %></div>
+
+<form action="/user/<%= @user.id%>/password_check" method="post">
+<div class="test-password">
+<span>Test Password:</span> <input autocomplete="off" required type="password" name="password" id="password">
+</div>
+<input type="submit" value="Check">
+</form>
+ </div>

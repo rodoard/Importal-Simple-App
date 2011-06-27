@@ -1,0 +1,50 @@
+form label {
+display:block;
+text-align:left;
+padding-left:30px;
+}
+fieldset{
+width: 216px;
+}
+
+fieldset#add-new-user select {
+margin-top:50px;
+}
+
+fieldset#add-new-user select{
+width:160px;
+}
+
+div.or-add-a-new-role {
+margin-top:30px;
+}
+
+table#users {
+ width:270px;
+}
+table#users caption {
+text-align:left;
+padding-bottom:10px;
+padding-left:40px;
+} 
+
+table#users th,
+table#users td {
+ text-align:left;
+}
+
+p.with-users {
+  padding-right:50px;
+}
+
+div.test-password {
+padding-top:30px;
+} 
+div.test-password span{
+display:block;
+} 
+
+div.message {
+color: green;
+margin-bottom:10px;
+}

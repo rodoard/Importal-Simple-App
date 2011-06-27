@@ -1,0 +1,30 @@
+<% unless @users.empty? %>
+<table id="users">
+  <caption><h2>Table: Users</h2></caption>
+  <tr>
+    <th>User</th>
+    <th>Roles</th>
+    <th>Actions</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.uroles %></td>
+    <td>
+    <% ['edit','delete'].each do |action| %>
+      <a data-confirm="Are you sure?" href="user/<%= user.id %>/<%= action %>"><%= action.capitalize %></a>
+    <% end %>
+   </td>
+  </tr>
+ <% end %> 
+</table>
+<% else %>
+   <h2>Users:</h2>
+   <% if (@users.count == 0) %>
+     <p>No users!</p>
+     <% add_user_class="no-users" %>
+   <% end %>  
+<% end %>
+<% if (User.can_add_new?)  %>
+     <p class="<%= add_user_class || "with-users"%>" ><a href="/user/new">Add another user.</a></p>
+<% end %>

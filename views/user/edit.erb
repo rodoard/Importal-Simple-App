@@ -1,0 +1,11 @@
+<h2><%= @user.email %><h2>
+<h3>Would you like to update the password for this user?<h3>
+<form action="/user/<%= @user.id %>" method="post">
+<fieldset id="edit-user">
+<legend>Edit User</legend>
+<input name="_method" type="hidden" value="put" />
+<%= erb :"user/_password_form" %> 
+<input id="user_submit" name="commit" type="submit" value="Update" />
+<a href="/">Cancel</a>
+</fieldset>
+</form>
